@@ -26,7 +26,7 @@ module Nanoc::Extra
               break if error
               break if STOP.equal?(elem)
               yield elem
-            rescue => err
+            rescue Exception => err # rubocop:disable Lint/RescueException
               error = err
               break
             end
